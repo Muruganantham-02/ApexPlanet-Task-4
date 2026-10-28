@@ -1,0 +1,228 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="My personal portfolio, task manager and product showcase.">
+  <title>My Portfolio | ApexPlanet Task 4</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+  <header class="site-header">
+    <nav class="navbar container">
+      <a class="logo" href="#home">MyPortfolio</a>
+
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#todo">To-Do App</a>
+        <a href="#products">Products</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- PROJECT 1: PERSONAL PORTFOLIO -->
+    <section id="home" class="hero section">
+      <div class="container hero-content">
+        <p class="eyebrow">HELLO, WELCOME TO MY PORTFOLIO</p>
+        <h1>Hi, I'm <span class="accent">Your Name</span></h1>
+        <h2>Aspiring Web Developer</h2>
+        <p>
+          I enjoy building useful, responsive and interactive
+          websites using HTML, CSS and JavaScript.
+        </p>
+        <a class="btn" href="#projects">Explore My Projects</a>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <div class="container">
+        <h2 class="section-title">About Me</h2>
+        <div class="card about-card">
+          <p>
+            I am an Artificial Intelligence and Data Science student
+            interested in web development, programming and data analysis.
+            I enjoy learning new technologies and creating practical
+            projects to improve my skills.
+          </p>
+
+          <h3>My Skills</h3>
+          <div class="skills">
+            <span>HTML</span>
+            <span>CSS</span>
+            <span>JavaScript</span>
+            <span>Python</span>
+            <span>SQL</span>
+            <span>Excel</span>
+            <span>GitHub</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="section section-alt">
+      <div class="container">
+        <h2 class="section-title">My Projects</h2>
+
+        <div class="project-grid">
+          <article class="card project-card">
+            <div class="project-icon">🧠</div>
+            <h3>Quiz and Joke Generator</h3>
+            <p>
+              An interactive quiz with score tracking and a joke
+              generator using a public API.
+            </p>
+            <span class="tag">HTML · CSS · JavaScript · API</span>
+          </article>
+
+          <article class="card project-card">
+            <div class="project-icon">✅</div>
+            <h3>Task Manager</h3>
+            <p>
+              A to-do application that lets users manage tasks and
+              save them in the browser.
+            </p>
+            <span class="tag">JavaScript · Local Storage</span>
+          </article>
+
+          <article class="card project-card">
+            <div class="project-icon">🛍️</div>
+            <h3>Product Explorer</h3>
+            <p>
+              A product listing page with category filters,
+              price filters and rating-based sorting.
+            </p>
+            <span class="tag">HTML · CSS · JavaScript</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECT 2: TO-DO APP -->
+    <section id="todo" class="section">
+      <div class="container">
+        <h2 class="section-title">My To-Do List</h2>
+        <p class="section-description">
+          Add tasks, mark them complete and delete them.
+          Your tasks are saved in this browser.
+        </p>
+
+        <div class="card todo-card">
+          <form id="todo-form" class="todo-form">
+            <label class="sr-only" for="todo-input">New task</label>
+            <input
+              id="todo-input"
+              type="text"
+              placeholder="Enter a task..."
+              maxlength="200"
+              required
+            >
+            <button class="btn" type="submit">Add Task</button>
+          </form>
+
+          <p id="todo-status" class="status-message" aria-live="polite"></p>
+          <ul id="todo-list" class="todo-list"></ul>
+          <p id="todo-empty" class="empty-message">
+            No tasks yet. Add your first task above!
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECT 3: PRODUCT LISTING -->
+    <section id="products" class="section section-alt">
+      <div class="container">
+        <h2 class="section-title">Product Explorer</h2>
+        <p class="section-description">
+          Explore products, filter by category or price,
+          and sort them by rating.
+        </p>
+
+        <div class="card filter-card">
+          <div class="filter-grid">
+            <div class="field">
+              <label for="category-filter">Category</label>
+              <select id="category-filter">
+                <option value="all">All categories</option>
+                <option value="Electronics">Electronics</option>
+                <option value="Accessories">Accessories</option>
+                <option value="Books">Books</option>
+                <option value="Home">Home</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="min-price">Minimum price (₹)</label>
+              <input id="min-price" type="number" min="0" placeholder="0">
+            </div>
+
+            <div class="field">
+              <label for="max-price">Maximum price (₹)</label>
+              <input id="max-price" type="number" min="0" placeholder="No limit">
+            </div>
+
+            <div class="field">
+              <label for="sort-filter">Sort by</label>
+              <select id="sort-filter">
+                <option value="default">Default order</option>
+                <option value="rating-high">Rating: highest first</option>
+                <option value="rating-low">Rating: lowest first</option>
+                <option value="price-low">Price: low to high</option>
+                <option value="price-high">Price: high to low</option>
+              </select>
+            </div>
+          </div>
+
+          <button id="reset-filters" class="btn btn-secondary" type="button">
+            Reset Filters
+          </button>
+          <p id="product-status" class="status-message" aria-live="polite"></p>
+        </div>
+
+        <div id="product-list" class="product-grid"></div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section">
+      <div class="container">
+        <h2 class="section-title">Contact Me</h2>
+        <div class="card contact-card">
+          <p>Thank you for visiting my portfolio!</p>
+          <p>
+            Email:
+            <a href="mailto:your-email@example.com">
+              your-email@example.com
+            </a>
+          </p>
+          <p>
+            GitHub:
+            <a href="https://github.com/" target="_blank" rel="noopener noreferrer">
+              Visit GitHub
+            </a>
+          </p>
+          <p>
+            LinkedIn:
+            <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">
+              Visit LinkedIn
+            </a>
+          </p>
+          <p class="small-note">
+            Replace the example email and links with your own details.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="current-year"></span> My Portfolio | ApexPlanet Task 4</p>
+  </footer>
+
+</body>
+</html>
